@@ -1,0 +1,5 @@
+# Node.js dependencies (npm install로 재생성)
+node_modules/
+
+# 로컬 설치 파일
+node-v24.21.0-x64.msi

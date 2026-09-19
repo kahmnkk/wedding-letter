@@ -1,0 +1,25 @@
+{
+  "name": "wedding-letter",
+  "version": "1.0.0",
+  "description": "순수 HTML, CSS, JavaScript로 만든 모바일 청첩장입니다. Node.js 설치 없이 기본 화면과 터미널 모드를 확인할 수 있습니다.",
+  "main": "script.js",
+  "scripts": {
+    "format": "prettier --write index.html style.css script.js README.md",
+    "format:check": "prettier --check index.html style.css script.js README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kahmnkk/wedding-letter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kahmnkk/wedding-letter/issues"
+  },
+  "homepage": "https://github.com/kahmnkk/wedding-letter#readme",
+  "devDependencies": {
+    "prettier": "^3.9.8"
+  }
+}

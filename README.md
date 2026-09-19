@@ -18,16 +18,24 @@
 const NAVER_MAP_CLIENT_ID = "발급받은_Client_ID";
 ```
 
-Client Secret은 입력하거나 공개하면 안 됩니다. 로컬 파일로 지도를 확인할 때는 네이버 클라우드 콘솔의 Web 서비스 URL에 `file://`을 등록하거나, 아래의 로컬 서버 방식으로 실행하세요.
+Client Secret은 입력하거나 공개하면 안 됩니다. 지도 API 인증은 브라우저의 실제 웹 주소를 기준으로 하므로, `file:///...`로 직접 연 화면 대신 아래 로컬 서버 방식으로 확인하세요.
 
 ## 로컬 서버로 미리보기 (선택)
 
-사진이나 네이버 지도를 포함해 배포 환경과 더 가깝게 확인하려면 로컬 서버를 사용하면 좋습니다. 현재 이 PC에는 Node.js와 Python이 설치되어 있지 않으므로, 둘 중 하나를 설치한 뒤 아래 명령을 사용하세요.
+사진이나 네이버 지도를 포함해 배포 환경과 동일하게 확인하려면 로컬 서버를 사용하세요. 네이버 클라우드 플랫폼 Application의 Web 서비스 URL에는 `http://localhost`를 등록합니다.
 
 ### Node.js를 설치한 경우
 
+Node.js를 방금 설치했다면 먼저 PowerShell 또는 Codex 터미널을 닫았다가 새로 여세요. 새 터미널에서도 `npx`를 찾지 못하면 아래 명령을 먼저 한 번 실행합니다.
+
 ```powershell
-npx serve .
+$env:Path = "C:\Program Files\nodejs;$env:Path"
+```
+
+그 다음 로컬 서버를 시작합니다.
+
+```powershell
+& "C:\Program Files\nodejs\npx.cmd" serve .
 ```
 
 표시되는 주소(보통 `http://localhost:3000`)를 브라우저에서 엽니다. 네이버 지도 콘솔에도 `http://localhost`를 Web 서비스 URL로 등록하세요.
@@ -45,3 +53,14 @@ python -m http.server 8000
 - `index.html`: 청첩장 구조와 내용
 - `style.css`: 모바일 디자인 및 터미널 화면 스타일
 - `script.js`: D-day, 네이버 지도, 타이핑 애니메이션
+
+## 사진 넣기
+
+웨딩 사진을 아래 이름으로 넣으면 페이지에 바로 표시됩니다. 사진 파일은 JPG를 권장합니다.
+
+- 첫 화면 사진: `images/main.jpg`
+- 갤러리: `images/gallery/photo-1.jpg`부터 `photo-15.jpg`까지
+
+갤러리에는 처음 8장의 사진과 `+ 더보기` 카드가 표시됩니다. 더보기 카드는 9번째 사진을 열며, 팝업 안에서 15장 전체를 좌우로 넘겨 볼 수 있습니다.
+
+사진을 더 넣으려면 `script.js`의 `galleryPhotos` 배열에 경로를 추가하세요. 예: `"images/gallery/photo-10.jpg"`.

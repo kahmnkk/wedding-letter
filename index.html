@@ -1,7 +1,155 @@
-<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>한신랑 ❤️ 김신부의 결혼식에 초대합니다</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Space+Mono&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><main class="invitation">
-<section class="hero"><div class="hero-image" role="img" aria-label="웨딩 사진"></div><div class="hero-copy"><h1>Wedding Invitation</h1><p>2027년 9월 26일 일요일 11시</p><p>더컨벤션 신사</p></div></section>
-<section class="message section"><p>한 줄기 별빛이 되어 만난 인연<br>평생을 함께 걸어가려 합니다.</p><p>소중한 분들의 축복 속에<br>저희 두 사람이 첫 걸음을 내딛습니다.</p><p>귀한 시간 내어 함께해 주신다면<br>그 어떤 축복보다 값진 선물이 될 것입니다.</p><div class="family"><p><span>한아버지 · 한어머니</span> 의 아들 <strong>한신랑</strong></p><p><span>김아버지 · 김어머니</span> 의 딸 <strong>김신부</strong></p></div></section>
-<section class="schedule section"><h2>일정</h2><div class="calendar-heading"><button>‹</button><p>2027 년&nbsp;&nbsp; 9 월</p><button>›</button></div><div class="calendar"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><i></i><i></i><i></i><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span class="selected-day">26</span><span>27</span><span>28</span><span>29</span><span>30</span></div><p class="wedding-time">2027년 9월 26일 일요일 오전 11시</p><div class="countdown"><div><b id="days">000</b><span>DAYS</span></div><div><b id="hours">00</b><span>HOUR</span></div><div><b id="minutes">00</b><span>MIN</span></div><div><b id="seconds">00</b><span>SEC</span></div></div><p class="dday-copy">한신랑 <em>♥</em> 김신부의 결혼식이 <strong id="dday-text"></strong>일 남았습니다.</p></section>
-<section class="location section"><h2>장소</h2><h3>더컨벤션 신사</h3><p>서울특별시 강남구 강남대로 652</p><p class="hall-name">더컨벤션 신사</p><div id="naver-map" class="map"><p>네이버 지도는 Client ID 등록 후 표시됩니다.</p></div><div class="map-links"><a href="https://naver.me/G3861Qy4" target="_blank">네이버 지도</a><a href="https://map.kakao.com/link/search/%EB%8D%94%EC%BB%A8%EB%B2%A4%EC%85%98%20%EC%8B%A0%EC%82%AC" target="_blank">카카오맵</a><a href="https://tmap.life/" target="_blank">TMAP</a></div><div class="info"><h4>대중교통 안내</h4><p>신사역 인근 (예식장 안내에 따라 이동)</p></div><div class="info"><h4>주차 안내</h4><p>예식장 주차 안내는 예식장에 문의해 주세요.</p></div></section>
-<section class="accounts section"><h2>마음 전하실 곳</h2><details><summary>신랑 측 계좌번호 <span>+</span></summary><p>한신랑<br><b>은행명 000-000-000000</b><button data-copy="은행명 000-000-000000">복사</button></p></details><details><summary>신부 측 계좌번호 <span>+</span></summary><p>김신부<br><b>은행명 000-000-000000</b><button data-copy="은행명 000-000-000000">복사</button></p></details><div class="share-buttons"><button id="copy-url">URL 복사하기</button><button id="share">공유하기</button></div></section>
-<section class="gallery section"><h2>갤러리</h2><div class="gallery-grid"><button>사진 1</button><button>사진 2</button><button>사진 3</button><button>사진 4</button><button>사진 5</button><button>사진 6</button></div></section><footer>© 2027 Han &amp; Kim Made with ♡<button id="open-terminal">developer mode</button></footer></main><section class="terminal" id="terminal"><button class="terminal-close" id="close-terminal">×</button><div class="terminal-window"><pre id="terminal-output"></pre><span class="cursor">▋</span><button id="terminal-next">PRESS ENTER / TAP TO CONTINUE</button></div></section><div class="toast" id="toast"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한신랑 ❤️ 김신부의 결혼식에 초대합니다</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="invitation">
+      <section class="hero">
+        <div class="hero-image" role="img" aria-label="웨딩 사진"></div>
+        <div class="hero-copy">
+          <h1>Wedding Invitation</h1>
+          <p>2027년 9월 26일 일요일 11시</p>
+          <p>더컨벤션 신사</p>
+        </div>
+      </section>
+      <section class="message section">
+        <p>한 줄기 별빛이 되어 만난 인연<br />평생을 함께 걸어가려 합니다.</p>
+        <p>소중한 분들의 축복 속에<br />저희 두 사람이 첫 걸음을 내딛습니다.</p>
+        <p>
+          귀한 시간 내어 함께해 주신다면<br />그 어떤 축복보다 값진 선물이 될
+          것입니다.
+        </p>
+        <div class="family">
+          <p>
+            <span>한아버지 · 한어머니</span> 의 아들 <strong>한신랑</strong>
+          </p>
+          <p><span>김아버지 · 김어머니</span> 의 딸 <strong>김신부</strong></p>
+        </div>
+      </section>
+      <section class="schedule section">
+        <h2>일정</h2>
+        <div class="calendar-heading">
+          <button>‹</button>
+          <p>2027 년&nbsp;&nbsp; 9 월</p>
+          <button>›</button>
+        </div>
+        <div class="calendar">
+          <span>일</span><span>월</span><span>화</span><span>수</span
+          ><span>목</span><span>금</span><span>토</span><i></i><i></i><i></i
+          ><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span
+          ><span>6</span><span>7</span><span>8</span><span>9</span
+          ><span>10</span><span>11</span><span>12</span><span>13</span
+          ><span>14</span><span>15</span><span>16</span><span>17</span
+          ><span>18</span><span>19</span><span>20</span><span>21</span
+          ><span>22</span><span>23</span><span>24</span><span>25</span
+          ><span class="selected-day">26</span><span>27</span><span>28</span
+          ><span>29</span><span>30</span>
+        </div>
+        <p class="wedding-time">2027년 9월 26일 일요일 오전 11시</p>
+        <div class="countdown">
+          <div><b id="days">000</b><span>DAYS</span></div>
+          <div><b id="hours">00</b><span>HOUR</span></div>
+          <div><b id="minutes">00</b><span>MIN</span></div>
+          <div><b id="seconds">00</b><span>SEC</span></div>
+        </div>
+        <p class="dday-copy">
+          한신랑 <em>♥</em> 김신부의 결혼식이 <strong id="dday-text"></strong>일
+          남았습니다.
+        </p>
+      </section>
+      <section class="location section">
+        <h2>장소</h2>
+        <h3>더컨벤션 신사</h3>
+        <p>서울특별시 강남구 강남대로 652</p>
+        <p class="hall-name">더컨벤션 신사</p>
+        <div id="naver-map" class="map">
+          <p>네이버 지도는 Client ID 등록 후 표시됩니다.</p>
+        </div>
+        <div class="map-links">
+          <a href="https://naver.me/G3861Qy4" target="_blank">네이버 지도</a
+          ><a
+            href="https://map.kakao.com/link/search/%EB%8D%94%EC%BB%A8%EB%B2%A4%EC%85%98%20%EC%8B%A0%EC%82%AC"
+            target="_blank"
+            >카카오맵</a
+          ><a href="https://tmap.life/" target="_blank">TMAP</a>
+        </div>
+        <div class="info">
+          <h4>대중교통 안내</h4>
+          <p>신사역 인근 (예식장 안내에 따라 이동)</p>
+        </div>
+        <div class="info">
+          <h4>주차 안내</h4>
+          <p>예식장 주차 안내는 예식장에 문의해 주세요.</p>
+        </div>
+      </section>
+      <section class="accounts section">
+        <h2>마음 전하실 곳</h2>
+        <details>
+          <summary>신랑 측 계좌번호 <span>+</span></summary>
+          <p>
+            한신랑<br /><b>은행명 000-000-000000</b
+            ><button data-copy="은행명 000-000-000000">복사</button>
+          </p>
+        </details>
+        <details>
+          <summary>신부 측 계좌번호 <span>+</span></summary>
+          <p>
+            김신부<br /><b>은행명 000-000-000000</b
+            ><button data-copy="은행명 000-000-000000">복사</button>
+          </p>
+        </details>
+        <div class="share-buttons">
+          <button id="copy-url">URL 복사하기</button
+          ><button id="share">공유하기</button>
+        </div>
+      </section>
+      <section class="gallery section">
+        <h2>갤러리</h2>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </section>
+      <footer>
+        © 2027 Han &amp; Kim Made with ♡<button id="open-terminal">
+          developer mode
+        </button>
+      </footer>
+    </main>
+    <section class="terminal" id="terminal">
+      <button class="terminal-close" id="close-terminal">×</button>
+      <div class="terminal-window">
+        <pre id="terminal-output"></pre>
+        <span class="cursor">▋</span
+        ><button id="terminal-next">PRESS ENTER / TAP TO CONTINUE</button>
+      </div>
+    </section>
+    <section class="lightbox" id="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-nav previous"
+        id="lightbox-previous"
+        aria-label="이전 사진"
+      >
+        ‹
+      </button>
+      <img id="lightbox-image" alt="확대된 웨딩 사진" />
+      <button
+        class="lightbox-nav next"
+        id="lightbox-next"
+        aria-label="다음 사진"
+      >
+        ›
+      </button>
+      <p id="lightbox-count"></p>
+    </section>
+    <div class="toast" id="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
