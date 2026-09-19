@@ -67,6 +67,6 @@ python -m http.server 8000
 
 ## 카카오톡 미리보기 이미지
 
-카카오톡 공유 미리보기는 첫 화면 사진인 `images/main.jpg`를 사용하도록 설정돼 있습니다. 배포한 뒤 `index.html`의 `https://YOUR_DOMAIN/images/main.jpg`에서 `YOUR_DOMAIN`만 실제 배포 도메인으로 바꾸세요. 예: `https://han-kim-wedding.vercel.app/images/main.jpg`.
+카카오톡 공유 미리보기는 첫 화면 사진인 `images/main.jpg`를 사용하도록 설정돼 있습니다.
 
 카카오톡은 이미 한 번 읽은 미리보기를 캐시할 수 있습니다. 배포 후에는 카카오 디벨로퍼스의 공유 디버거에서 주소를 다시 수집하면 변경 사항이 반영됩니다.

@@ -13,6 +13,7 @@ body {
     14px "Noto Serif KR",
     serif;
   font-weight: 300;
+  dynamic-range-limit: standard;
 }
 .invitation {
   max-width: 480px;
@@ -31,6 +32,7 @@ body {
 .hero-image {
   position: absolute;
   inset: 0;
+  dynamic-range-limit: standard;
   background:
     url("images/main.jpg") center/cover no-repeat,
     linear-gradient(145deg, #858b86, #d9d5c9 50%, #a67f62);
@@ -431,6 +433,7 @@ footer button {
   height: 100%;
   object-fit: cover;
   display: block;
+  dynamic-range-limit: standard;
 }
 .gallery-grid .more-card::after {
   content: "+";
@@ -473,6 +476,7 @@ footer button {
   max-height: 68svh;
   object-fit: contain;
   pointer-events: auto;
+  dynamic-range-limit: no-limit;
 }
 .lightbox button {
   border: 0;

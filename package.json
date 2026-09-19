@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kahmnkk/wedding-letter#readme",
   "devDependencies": {
-    "prettier": "^3.9.8"
+    "prettier": "^3.9.8",
+    "sharp": "^0.35.4"
   }
 }
