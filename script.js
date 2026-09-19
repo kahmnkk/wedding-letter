@@ -91,39 +91,47 @@ document
       : notice("공유 기능을 지원하지 않습니다."),
   );
 const terminal = document.querySelector("#terminal"),
-  out = document.querySelector("#terminal-output"),
-  pages = [
-    "$ ./wedding-invitation --open\n\nInitializing love_protocol...\n[████████████████████] 100%\n\nACCESS GRANTED\n",
-    "\n  ♥  한신랑  +  김신부  ♥\n\n2027. 09. 26. SUN 11:00\nTHE CONVENTION SINSA\n\n새로운 챕터의 시작에\n함께 접속해 주세요.\n",
-    "\n$ location --open\n더컨벤션 신사\n\nSee you at our happiest commit.\n",
-  ];
-let pg = 0,
-  timer;
-function type() {
-  clearInterval(timer);
-  out.textContent = "";
-  let i = 0;
-  timer = setInterval(() => {
-    out.textContent += pages[pg][i++] || "";
-    if (i >= pages[pg].length) clearInterval(timer);
-  }, 16);
-}
-function next() {
-  pg = (pg + 1) % pages.length;
-  type();
+  out = document.querySelector("#terminal-output");
+const terminalLines = [
+  ["muted", "Last login: Sun Sep 26 10:41:07 on love.local"],
+  ["prompt", "han-groom@wedding ~ % ./open-invitation.sh"],
+  ["info", "Initializing love_protocol v2027.09.26..."],
+  ["success", "✓ connection established"],
+  ["prompt", "han-groom@wedding ~ % cat ./our-story.txt"],
+  ["output", "한 줄기 별빛이 되어 만난 인연,"],
+  ["output", "평생을 함께 걸어가려 합니다."],
+  ["prompt", "han-groom@wedding ~ % wedding --when"],
+  ["accent", "2027. 09. 26. SUN 11:00 AM"],
+  ["prompt", "han-groom@wedding ~ % wedding --where"],
+  ["accent", "THE CONVENTION SINSA"],
+  ["prompt", "han-groom@wedding ~ % echo $MESSAGE"],
+  ["output", "새로운 챕터의 시작에 함께 접속해 주세요."],
+  ["success", "Invitation delivered. ♥"],
+];
+let terminalTimer;
+function streamTerminal() {
+  clearInterval(terminalTimer);
+  out.innerHTML = "";
+  let lineIndex = 0;
+  terminalTimer = setInterval(() => {
+    if (lineIndex >= terminalLines.length) return clearInterval(terminalTimer);
+    const [kind, text] = terminalLines[lineIndex++];
+    const line = document.createElement("span");
+    line.className = `terminal-line ${kind}`;
+    line.textContent = text;
+    out.append(line, document.createTextNode("\n"));
+    out.scrollTop = out.scrollHeight;
+  }, 520);
 }
 document.querySelector("#open-terminal").onclick = () => {
   terminal.classList.add("is-open");
-  pg = 0;
-  type();
+  streamTerminal();
 };
 document.querySelector("#close-terminal").onclick = () =>
   terminal.classList.remove("is-open");
-document.querySelector("#terminal-next").onclick = next;
 document.addEventListener("keydown", (e) => {
   if (terminal.classList.contains("is-open")) {
     if (e.key === "Escape") terminal.classList.remove("is-open");
-    if (e.key === "Enter") next();
   }
 });
 

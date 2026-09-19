@@ -13,7 +13,10 @@
       property="og:description"
       content="2027년 9월 26일 일요일 오전 11시, 더컨벤션 신사"
     />
-    <meta property="og:image" content="https://kahmnkk.github.io/wedding-letter/images/main.jpg" />
+    <meta
+      property="og:image"
+      content="https://kahmnkk.github.io/wedding-letter/images/main.jpg"
+    />
     <meta property="og:image:alt" content="한신랑과 김신부의 웨딩 사진" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -137,11 +140,19 @@
       </footer>
     </main>
     <section class="terminal" id="terminal">
-      <button class="terminal-close" id="close-terminal">×</button>
       <div class="terminal-window">
-        <pre id="terminal-output"></pre>
-        <span class="cursor">▋</span
-        ><button id="terminal-next">PRESS ENTER / TAP TO CONTINUE</button>
+        <div class="terminal-titlebar">
+          <button
+            class="traffic-light close"
+            id="close-terminal"
+            aria-label="청첩장으로 돌아가기"
+          ></button>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+          <p>han-groom@wedding — zsh</p>
+        </div>
+        <pre id="terminal-output" aria-live="polite"></pre>
+        <span class="cursor">▋</span>
       </div>
     </section>
     <section class="lightbox" id="lightbox" aria-hidden="true">
