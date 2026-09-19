@@ -179,3 +179,26 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft") showPhoto(activePhoto - 1);
   if (event.key === "ArrowRight") showPhoto(activePhoto + 1);
 });
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+lightboxImage.addEventListener(
+  "touchstart",
+  (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+    touchStartY = event.changedTouches[0].clientY;
+  },
+  { passive: true },
+);
+
+lightboxImage.addEventListener(
+  "touchend",
+  (event) => {
+    const deltaX = event.changedTouches[0].clientX - touchStartX;
+    const deltaY = event.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(deltaX) < 35 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    showPhoto(deltaX < 0 ? activePhoto + 1 : activePhoto - 1);
+  },
+  { passive: true },
+);

@@ -32,10 +32,10 @@ body {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, #2226, #fff0 40%, #2224),
+    linear-gradient(180deg, rgba(34, 34, 34, 0.18), transparent 40%, rgba(34, 34, 34, 0.1)),
     url("images/main.jpg") center/cover no-repeat,
     linear-gradient(145deg, #858b86, #d9d5c9 50%, #a67f62);
-  filter: saturate(0.75);
+  filter: none;
 }
 .hero-copy {
   position: absolute;
@@ -410,7 +410,7 @@ footer button {
   z-index: 50;
   inset: 0;
   place-items: center;
-  grid-template-columns: auto minmax(0, 78vw) auto;
+  grid-template-columns: 48px minmax(0, calc(100vw - 96px)) 48px;
   column-gap: 0;
   background: rgba(0, 0, 0, 0.55);
   pointer-events: auto;
@@ -434,9 +434,18 @@ footer button {
 }
 .lightbox-nav {
   position: static;
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
   font: 37px/1 serif;
   padding: 8px 0;
   border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+}
+.lightbox-nav:focus,
+.lightbox-nav:active {
+  outline: none;
+  background: transparent;
 }
 .lightbox p {
   position: absolute;
